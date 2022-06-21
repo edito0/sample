@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar {
+            padding: 20px;
+            background: url('https://static.wixstatic.com/media/11062b_fde4391568af44c8a1bb97521b4b71e8~mv2.jpeg/v1/fill/w_1899,h_275,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_fde4391568af44c8a1bb97521b4b71e8~mv2.jpeg') no-repeat;
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.408);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: hidden;
+        }
+
+        .upperbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 65%;
+
+        }
+
+        .lowerbox {
+            display: flex;
+            align-items: center;
+            width: 65%;
+            padding: 30px;
+            color: white;
+            margin: 20px;
+        }
+
+        .lowerbox h1 {
+            font-size: 35px;
+            width: 30%;
+        }
+
+        .lowerbox p {
+            margin-left: 50px;
+            font-size: 15px;
+            width: 70%;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .itemsContaiener ul {
+            display: flex;
+            list-style: none;
+        }
+
+
+        .itemsContaiener ul li {
+            display: block;
+            padding: 10px 50px;
+            color: white;
+            border-top: 3px solid rgba(232, 153, 175, 0);
+        }
+
+        .itemsContaiener ul li:hover {
+            border-top: 3px solid yellow;
+        }
+
+        .itemsContaiener ul li a {
+
+            color: white;
+            text-decoration: none;
+            font-size: 19px;
+        }
+
+
+        .humburger {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: none;
+            z-index: 1;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .humburger-line {
+            height: 3px;
+            width: 30px;
+            background-color: black;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .menu:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .menu:nth-child(2) {
+            transform: translateX(-30px);
+            opacity: 0;
+        }
+
+        .menu:nth-child(3) {
+            transform: rotate(-45deg) translate(2px, -1px);
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .boxcontainer {
+            width: 70%;
+        }
+
+        .boxcontainer h1 {
+            padding: 0px 20px;
+            font-size: 30px;
+        }
+
+        .box {
+            display: flex;
+        }
+
+        .image img {
+            width: 400px;
+        }
+
+        .box div {
+            padding: 20px;
+        }
+
+        .box-b {
+            display: flex;
+        }
+
+        .box-b {
+            display: flex;
+        }
+
+        .para-b {
+            margin: 30px;
+        }
+
+        .image-b img {
+            width: 50vw;
+        }
+
+        .para-b p,
+        .para p {
+            color: gray;
+        }
+
+        .para-b h1 {
+            text-align: center;
+            font-size: 35px;
+            margin: 0px 20px 20px 20px;
+        }
+
+        .lastdiv {
+            background: url('https://static.wixstatic.com/media/11062b_3adf435f15b04603b863a3117a030ee2~mv2.jpg/v1/fill/w_1899,h_711,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_3adf435f15b04603b863a3117a030ee2~mv2.jpg');
+            height: 500px;
+            padding: 90px 50px;
+
+        }
+
+        .lastdiv div {
+            margin-left: 300px;
+            width: 290px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .lastdiv div h1 {
+            font-size: 40px;
+            color: blueviolet;
+            font-weight: normal;
+        }
+
+        .lastdiv div p {
+            font-size: 19px;
+            color: gray;
+        }
+
+        .lastdiv div a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, pink, blueviolet);
+        }
+
+        footer {
+            min-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        @media only screen and (max-width:1200px) {
+            .humburger {
+                display: block;
+            }
+
+            .upperbox {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .lowerbox {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .lowerbox h1 {
+                font-size: 35px;
+                width: auto;
+            }
+
+            .lowerbox p {
+                font-size: 15px;
+                width: auto;
+            }
+
+            .itemsContaiener {
+                display: none;
+                position: absolute;
+                top: 0;
+                margin-right: 250%;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                padding: 100px 50px;
+                background-color: white;
+                transition: all 0.9s ease;
+            }
+
+
+            .itemsContaiener ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .itemsContaiener ul li a {
+                color: black;
+            }
+
+
+            .itemsContaiener-menu {
+                position: absolute;
+                top: 0;
+                margin-right: 0%;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                padding: 100px 50px;
+                background-color: white;
+
+            }
+
+            .itemsContaiener-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .itemsContaiener-menu ul li a {
+                color: black;
+            }
+
+            .boxcontainer {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .box,
+            .box-b {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .image-b img {
+                width: 80vw;
+            }
+
+
+            .box div {
+                padding: 20px 0px;
+            }
+
+            .lastdiv {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lastdiv div {
+                margin-left: 0px;
+                width: 250px;
+            }
+
+
+            .image img {
+                width: 300px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="upperbox">
+            <div class="logo">
+                <img src="https://static.wixstatic.com/media/ab85bd_a8fc87181d754f4ab73a4bd68871f863~mv2.png/v1/crop/x_0,y_143,w_500,h_214/fill/w_248,h_100,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo.png"
+                    alt="">
+            </div>
+            <div class="itemsContaiener">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">AboutUs</a></li>
+                    <li><a href="">ContactUs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="lowerbox">
+            <h1>
+                OUR PURPOSE
+            </h1>
+            <p>
+                Wudroz is dedicated to improving your health and wellness by developing medicines and providing health
+                tips and resources to help you manage a healthy lifestyle.
+            </p>
+        </div>
+
+    </nav>
+    <div class='humburger' onclick="menu()">
+        <div class='humburger-line'></div>
+        <div class='humburger-line'></div>
+        <div class='humburger-line'></div>
+    </div>
+
+    <main>
+        <section class="boxcontainer">
+            <h1>Who We are</h1>
+            <section class="box">
+                <div class="image">
+                    <img src="https://static.wixstatic.com/media/11062b_e8899b7e3db84e7c83b3dc46c975b863~mv2.jpg/v1/crop/x_0,y_0,w_4205,h_3827/fill/w_568,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Scientist%20in%20Laboratory.jpg"
+                        alt="">
+                </div>
+                <div class="para">
+                    <p>Wudroz Pharma is a subsidiary of Medilance Healthcare, based in Chandigarh, India.</p>
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <section class="boxcontainer-b">
+
+        <section class="box-b">
+            <div class="image-b">
+                <img src="https://static.wixstatic.com/media/a71c1a4212c44494b9d6ae8f51ec3848.jpg/v1/fill/w_1108,h_738,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Modern%20Building.jpg"
+                    alt="">
+            </div>
+            <div class="para-b">
+                <h1>Our Parent Company</h1>
+                <p>WMedilance Healthcare is one of the most renowned and well-established pcd pharma companies in
+                    Chandigarh. Medilance Healthcare has been established just a short time ago in Chandigarh and in
+                    within few time it is reaching the heights of the success in the pharmaceutical industry. All this
+                    become possible only because of our true commitment towards the quality of pharmaceutical products.
+                    Company's deep dedication and commitment towards the quality delivery of pharma products has made it
+                    one of the top pharma franchise companies in India.
+                    Visit the Link for more Information: medilance.in</p>
+            </div>
+        </section>
+
+    </section>
+
+    <div class="lastdiv">
+        <div>
+            <h1>Business Opportunity</h1>
+            <p>Wudroz welcomes unique and value added inquiries regarding business partnerships in acquisitions,
+                licensing and co-development projects. We continuously seek business partners that embrace a mutual
+                commitment to growing together and exhibit a common dedication to quality and the patients we serve.
+            </p>
+            <a href="">Contact us now</a>
+        </div>
+    </div>
+
+    <footer>© 2022 Wudroz Pharma. All rights reserved. This information—including product information is intended only
+        for residents of India.</footer>
+
+
+    <script>
+        function menu() {
+            const humbuerger = document.querySelector('.humburger');
+            const humbuergerLine = document.querySelectorAll('.humburger-line');
+
+            humbuergerLine.forEach((element) => {
+                element.classList.toggle('menu');
+            });
+
+            const navbar = document.querySelector('.itemsContaiener')
+            navbar.classList.toggle('itemsContaiener-menu');
+        }
+
+    </script>
+</body>
+
+</html>
